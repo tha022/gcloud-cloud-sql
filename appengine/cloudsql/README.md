@@ -43,3 +43,8 @@ $ mvn clean appengine:devserver -DINSTANCE_CONNECTION_NAME=instanceConnectionNam
 ```
 Note - you must use a local mysql instance for the 1st Generation instance and change the local Url
 in `src/main/webapp/WEB-INF/appengine-web.xml` to use your local server.
+
+```bash
+$ mvn clean appengine:update -DINSTANCE_CONNECTION_NAME=sdo-test-project:europe-west1:test-mysql-db -Duser=tha022 -Dpassword=tomas465 -Ddatabase=cloudsql
+$ mvn clean appengine:devserver -DINSTANCE_CONNECTION_NAME=sdo-test-project:europe-west1:test-mysql-db -Duser=tha022 -Dpassword=tomas465 -Ddatabase=cloudsql
+```

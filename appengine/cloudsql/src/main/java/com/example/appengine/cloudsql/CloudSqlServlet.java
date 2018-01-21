@@ -16,6 +16,9 @@
 
 package com.example.appengine.cloudsql;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Inet4Address;
@@ -38,15 +41,19 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class CloudSqlServlet extends HttpServlet {
 
+  Logger logger = LoggerFactory.getLogger(CloudSqlServlet.class);
+
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException,
       ServletException {
+
     String path = req.getRequestURI();
     if (path.startsWith("/favicon.ico")) {
       return; // ignore the request for favicon.ico
     }
     // store only the first two octets of a users ip address
     String userIp = req.getRemoteAddr();
+    logger.info("Hello World, userIp: {}", userIp);
     InetAddress address = InetAddress.getByName(userIp);
     if (address instanceof Inet6Address) {
       // nest indexOf calls to find the second occurrence of a character in a string

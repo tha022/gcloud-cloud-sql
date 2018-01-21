@@ -37,10 +37,10 @@
      project:region:instance for Cloud SQL 2nd Generation or
      project:instance        for Cloud SQL 1st Generation
 -->
-    <INSTANCE_CONNECTION_NAME></INSTANCE_CONNECTION_NAME>
+    <INSTANCE_CONNECTION_NAME>sdo-test-project:europe-west1:test-mysql-db</INSTANCE_CONNECTION_NAME>
     <user>root</user>
-    <password>myPassword</password>
-    <database>sqldemo</database>
+    <password>tomas465</password>
+    <database>cloudsql</database>
 
 <!-- [START_EXCLUDE] -->
     <appengine.maven.plugin>1.0.0</appengine.maven.plugin>
@@ -82,6 +82,26 @@
       <artifactId>mysql-socket-factory</artifactId>
       <version>1.0.5</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+    <!--<dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
+    </dependency>-->
+
     <!-- [END dependencies] -->
   </dependencies>
   <build>
